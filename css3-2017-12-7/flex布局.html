@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>弹性盒布局</title>
+</head>
+<style type="text/css">
+	*{margin:0px;padding:0px;}
+	ul{list-style: none}
+	
+	/* 
+		容器的6个属性
+		flex-direction:row/row-reserse/column/column-reserve; 决定主轴的方向（即项目的排列方向）
+
+		flex-wrap:nowrap/wrap/wrap-reserve 规定元素是否都在主轴上，如果超出去换行还是不换行
+			nowrap:默认不换行;
+
+		flex-flow:row nowrap; flex-direction属性和flex-wrap属性的简写形式
+
+
+		justify-content:flex-start/flex-end/center/space-between/space-around 项目在主轴上的对齐方式
+
+		align-items:flex-start/flex-end/center/baseline/stretch; 项目在y轴上对齐方式
+
+		align-content flex-start/flex-end/center/space-between/space-around/stretch; 定义了多根轴线的对齐方式。
+
+
+
+
+
+		项目的属性
+		order:number;           定义项目的排列顺序。数值越小，排列越靠前
+		flex-grow:number;       规定项目的放大属性 
+		flex-shrink:number;     规定项目的缩小属性 
+		flex-basis              定义了在分配多余空间之前，项目占据的主轴空间
+		flex:0 1 auto;          flex-grow, flex-shrink 和 flex-basis的简写
+		align-self              可以覆盖容器align-items,定义自己的对齐方式
+
+
+	 */
+
+	.flexbox{
+		/*定义容器 */
+		width: 400px;
+		padding:10px;
+		margin:50px auto;
+		border:1px solid #ddd;
+		display:-webkit-flex;
+		display: flex;
+		flex-direction: row;
+		flex-wrap:wrap;
+		justify-content: space-between;
+		align-items:center;
+	}
+	.flexbox>li{
+		width: 50px;
+		height:100px;
+		background:pink;
+		margin:10px 10px;
+		color: #fff;
+		text-align: center;
+		line-height: 30px;
+		display:flex;
+		justify-content: center;
+		align-items:center;
+	}
+	.flexbox>li>span{
+		display: inline-block;
+		background: red;
+		color:#fff;
+		align-self:center;
+	}
+
+	.box{
+		width: 200px;
+		height: 200px;
+		border:1px solid red;
+		display: -webkit-flex;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+	}
+	.box>h1{}
+</style>
+
+<body>
+	<ul class="flexbox">
+		<li><span>我要学习</span></li>
+		<li><span>成为大神</span></li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+		<li>11</li>
+	</ul>
+
+
+	<div class="box">
+		<h1>加油吧，少年</h1>
+	</div>
+
+</body>
+</html>
